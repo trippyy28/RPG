@@ -16,5 +16,4 @@ private:
     Animation animation;
     unsigned int row;
     float speed;
-    bool faceRight;
 };

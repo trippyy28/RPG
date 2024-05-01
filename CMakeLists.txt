@@ -10,8 +10,8 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(RPG src/main.cpp src/Animation.cpp src/Player.cpp)
-target_link_libraries(RPG PRIVATE sfml-graphics)
+add_executable(RPG src/main.cpp src/Animation.cpp src/Player.cpp src/TileMap.cpp src/Button.cpp)
+target_link_libraries(RPG PRIVATE sfml-graphics sfml-audio)
 target_compile_features(RPG PRIVATE cxx_std_17)
 
 if(WIN32)

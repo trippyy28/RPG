@@ -6,7 +6,7 @@ Player::Player(sf::Texture *texture, sf::Vector2u imageCount, float switchTime, 
     this->speed = speed;
     row = 0;
 
-    body.setSize(sf::Vector2f(100.0f, 100.0f));
+    body.setSize(sf::Vector2f(60.0f, 60.0f));
     body.setPosition(206.0f, 206.0f);
     body.setTexture(texture);
 }
