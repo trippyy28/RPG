@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "TileMap.h" // Ensure the header file name matches
 #include "Button.h"
+#include "Triangle.h"
 #include <SFML/Audio.hpp>
 #include <iostream>
 
@@ -43,34 +44,34 @@ int main()
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
+        72,
         0,
         0,
         0,
@@ -115,7 +116,8 @@ int main()
         std::cerr << "Failed to load player texture!" << std::endl;
     }
     Player player(&playerTexture, sf::Vector2u(3, 3), 0.3f, 150.0f);
-    Button button(50, 50, 50, 50, "Toggle Music");
+    Button button(50, 50, 100, 50, "Toggle Music");
+    Triangle triangle(sf::Vector2f(200, 100), sf::Vector2f(300, 200), sf::Vector2f(100, 200), sf::Color::Red);
 
     sf::Clock clock;
     float deltaTime = 0.0f;
@@ -138,9 +140,16 @@ int main()
                 {
                     std::cout << "Button clicked!" << std::endl;
                     if (music.getStatus() == sf::Music::Playing)
+                    {
+
                         music.pause();
+                        std::cout << "music pause" << std ::endl;
+                    }
                     else
+                    {
+                        std::cout << "music on" << std::endl;
                         music.play();
+                    }
                 }
                 break;
             }
@@ -152,6 +161,7 @@ int main()
         window.draw(map); // Draw the map before the player to ensure it's in the background
         button.draw(window);
         player.Draw(window);
+        triangle.draw(window);
         window.display();
     }
 }

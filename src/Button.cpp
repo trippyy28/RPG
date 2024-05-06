@@ -1,4 +1,5 @@
 #include "Button.h"
+#include <iostream>
 
 Button::Button(float x, float y, float width, float height, std::string buttonText)
 {
@@ -8,7 +9,7 @@ Button::Button(float x, float y, float width, float height, std::string buttonTe
     font.loadFromFile("/users/trippyy28/Desktop/RPG/src/font.ttf"); // replace with the path to your font file
     text.setFont(font);
     text.setString(buttonText);
-    text.setCharacterSize(24);
+    text.setCharacterSize(12);
     text.setFillColor(sf::Color::Black);
     text.setPosition(
         shape.getPosition().x + (shape.getGlobalBounds().width / 2) - (text.getGlobalBounds().width / 2),
